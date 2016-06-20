@@ -1,0 +1,36 @@
+<h3>管理画面 </h3>
+
+<p>Find me in app/views/admin_top/do.html.erb</p>
+
+<h1 class="page-header">求人一覧</h1>
+
+
+          <table class="table table-bordered table-hover table-striped">
+          <thead><tr>
+            <th>求人ID</th>
+            <th>エリア</th>
+            <th>タイトル</th>
+            <th>説明文</th>
+            <th>作成時刻</th>
+            <th>応募数</th>
+            <th class="text-center">編集</th></tr>
+          </thead>
+
+
+<% @jobs.each do |job| %>
+<p><%= job.title %></p>
+<% end %>
+
+
+<%= link_to '戻っちゃうよ',top_top_page_path %>
+<div>
+ <input type="button" value="前のページへ戻る" onclick="history.back()">
+ <%= button_to '戻る',top_top_page_path %>
+<div>
+</div>
+<ul>
+
+
+
+
+</ul>

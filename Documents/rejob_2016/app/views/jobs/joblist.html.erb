@@ -1,0 +1,24 @@
+<h1>案件一覧</h1>
+
+<form method="get" action="http://localhost:3000/jobs/area">
+
+<p>
+    <%= label_tag :title_id, '都道府県:' %>
+    <%= select_tag :title_id,
+      options_from_collection_for_select(Title.all, "id", "area",
+      selected: @title_id) ,include_blank: true %>
+  </p>
+
+  <p><input type="submit" value="検索"></p>
+
+   </form>
+
+
+<p>Find me in app/views/jobs/joblist.html.erb</p>
+
+<ul>
+  <li><%= @job.title %></li>
+  <li><%= @job.detail %></li>
+<ul>
+
+<p><%= link_to '案件詳細',jobs_job_detail_path %></p>

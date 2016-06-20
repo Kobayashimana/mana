@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-top">
+        <div class="container">
+          <ul class="header-top__navi">
+            <li><a href="http://google.com">googleへはこちらから</a></li>
+            <li><a href="https://client.relax-job.com/auth/login">企業様ログイン</a></li>
+            <li><%= link_to 'adminログイン',admin_top_do_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a class="header-middle__logo" href="/top/top_page"><%= image_tag 'logo_header.png' %></a>
+    <h1 style="color:red">~リジョブ~</h1>
+    <p>Find me in app/views/top/top_page.html.erb</p>
+    <p><%= link_to '・案件一覧',joblist_path %></p>
+    <p><%= link_to '・詳細',jobs_job_detail_path %></p>
+    <p><%= link_to '・ログイン',login_top_path%></p>
+    名前<input type="text" name="mana">
+    <input type="btn" value="ボタン">
+  </body>
+</html>
