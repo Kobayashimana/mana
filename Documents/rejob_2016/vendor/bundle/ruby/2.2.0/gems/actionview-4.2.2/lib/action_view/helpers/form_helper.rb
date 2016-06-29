@@ -723,7 +723,7 @@ module ActionView
       #
       # ==== Examples
       #   label(:post, :title)
-      #   # => <label for="post_title">Title</label>
+      #   # => <label for="post_title">Area</label>
       #
       # You can localize your labels based on model and attribute names.
       # For example you can define the following in your locale (e.g. en.yml)
@@ -1607,7 +1607,7 @@ module ActionView
       #
       # ==== Examples
       #   label(:post, :title)
-      #   # => <label for="post_title">Title</label>
+      #   # => <label for="post_title">Area</label>
       #
       # You can localize your labels based on model and attribute names.
       # For example you can define the following in your locale (e.g. en.yml)

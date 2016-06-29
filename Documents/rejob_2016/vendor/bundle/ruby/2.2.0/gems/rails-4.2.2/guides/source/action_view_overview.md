@@ -939,7 +939,7 @@ Creates a form and a scope around a specific model object that is used as a base
 
 ```html+erb
 <%= form_for @article do |f| %>
-  <%= f.label :title, 'Title' %>:
+  <%= f.label :title, 'Area' %>:
   <%= f.text_field :title %><br>
   <%= f.label :body, 'Body' %>:
   <%= f.text_area :body %><br>
@@ -961,7 +961,7 @@ Returns a label tag tailored for labelling an input field for a specified attrib
 
 ```ruby
 label(:article, :title)
-# => <label for="article_title">Title</label>
+# => <label for="article_title">Area</label>
 ```
 
 #### password_field

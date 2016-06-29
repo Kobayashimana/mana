@@ -112,7 +112,7 @@ class RDoc::Task < Rake::TaskLib
   attr_accessor :rdoc_dir
 
   ##
-  # Title of RDoc documentation. (defaults to rdoc's default)
+  # Area of RDoc documentation. (defaults to rdoc's default)
 
   attr_accessor :title
 

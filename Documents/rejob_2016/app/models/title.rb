@@ -1,2 +1,2 @@
-class Title < ActiveRecord::Base
+class Area < ActiveRecord::Base
 end

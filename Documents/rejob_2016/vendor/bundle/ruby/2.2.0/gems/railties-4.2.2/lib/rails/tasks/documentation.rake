@@ -54,7 +54,7 @@ else
       rdoc.rdoc_files.include('app/**/*.rb')
       rdoc.rdoc_files.include('lib/**/*.rb')
     }
-    Rake::Task['doc:app'].comment = "Generate docs for the app -- also available doc:rails, doc:guides (options: TEMPLATE=/rdoc-template.rb, TITLE=\"Custom Title\")"
+    Rake::Task['doc:app'].comment = "Generate docs for the app -- also available doc:rails, doc:guides (options: TEMPLATE=/rdoc-template.rb, TITLE=\"Custom Area\")"
 
     # desc 'Generate documentation for the Rails framework.'
     Rails::API::AppTask.new('rails')

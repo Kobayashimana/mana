@@ -124,9 +124,9 @@ and +text+ to return plain text:
 Also, +to_text+ is available, which does the right thing with
 whitespace around block-level elements.
 
-  doc = Loofah.fragment("<h1>Title</h1><div>Content</div>")
-  doc.text    # => "TitleContent"           # probably not what you want
-  doc.to_text # => "\nTitle\n\nContent\n"   # better
+  doc = Loofah.fragment("<h1>Area</h1><div>Content</div>")
+  doc.text    # => "AreaContent"           # probably not what you want
+  doc.to_text # => "\nArea\n\nContent\n"   # better
 
 === Loofah::XML::Document and Loofah::XML::DocumentFragment
 

@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div class="header">
+    <div class="header-top">
+      <div class="container">
+        <ul class="header-top__navi">
+          <li><%= link_to 'Go to Top Page',top_top_page_path%></li>
+          <li><%= link_to '無料会員登録',sighnup_path%></li>
+          <li><%= link_to 'adminログイン',admin_top_do_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 <%= yield %>
 
 </body>
+<footer>
+ created by Mana Kobayashi (rejob)
+</footer>
 </html>

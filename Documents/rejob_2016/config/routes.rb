@@ -1,27 +1,60 @@
 Rails.application.routes.draw do
+  get 'login/mypage'
+
+  get 'sessions/login'
+
+  get 'sessions/mypage'
+
+  get 'sessions/sighnup'
+
+  get 'login/edit'
+
   get 'admin_top/do'
 
   get 'admin_top/user'
 
-  get 'joblist/index'
+  get 'jobs' ,to:"jobs#index"
 
-  get 'joblist/show'
+  get 'job', to:"jobs#show"
 
-  get 'joblist' ,to:"jobs#joblist"
+  get 'entry' ,to:"jobs#entry"
 
   get 'jobs_job_detail' , to:"jobs#job_detail"
-
-  get 'top/top_page' , to:"top#top_page"
 
   get 'top/top_page'
 
   get 'jobs/area'
 
-  get 'login_top', to:"login_top#loginTop"
+  get 'login', to:"login#index"
 
   get 'admin_top/do', to:"admin_top#do"
 
   get 'admin_top/user', to:"admin_top#user"
+
+  get 'admin_new', to:"admin_top#new"
+
+  get 'admin_destroy/:id', to:"admin_top#destroy"
+
+  post 'admin_new', to:"admin_top#create"
+
+  get 'sighnup', to:"sighnup#index"
+
+  post 'sighnup', to:"sighnup#create"
+
+  get 'login_through' ,to:"login#login_through"
+
+  #get 'login', to:"login#create"
+
+  post 'sessions' ,to:"sessions#login"
+
+  get 'login_check' ,to:"login#create"
+
+  get 'mypage' ,to:"sessions#mypage"
+
+
+  resources:edit
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -77,4 +110,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  #match ':controller(/:action(/:id))(.:format)'
 end

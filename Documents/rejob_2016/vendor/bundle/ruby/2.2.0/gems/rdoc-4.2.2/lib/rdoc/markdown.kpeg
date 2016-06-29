@@ -976,7 +976,7 @@ ReferenceLinkDouble = Label:content < Spnl > !"[]" Label:label
 ReferenceLinkSingle = Label:content < (Spnl "[]")? >
                       { link_to content, content, text }
 
-ExplicitLink =  Label:l Spnl "(" @Sp Source:s Spnl Title @Sp ")"
+ExplicitLink =  Label:l Spnl "(" @Sp Source:s Spnl Area @Sp ")"
                 { "{#{l}}[#{s}]" }
 
 Source  = ( "<" < SourceContents > ">" | < SourceContents > )
@@ -985,12 +985,12 @@ Source  = ( "<" < SourceContents > ">" | < SourceContents > )
 SourceContents = ( ( !"(" !")" !">" Nonspacechar )+ | "(" SourceContents ")")*
                  | ""
 
-Title = ( TitleSingle | TitleDouble | "" ):a
+Area = ( AreaSingle | AreaDouble | "" ):a
         { a }
 
-TitleSingle = "'" ( !( "'" @Sp ( ")" | @Newline ) ) . )* "'"
+AreaSingle = "'" ( !( "'" @Sp ( ")" | @Newline ) ) . )* "'"
 
-TitleDouble = "\"" ( !( "\"" @Sp ( ")" | @Newline ) ) . )* "\""
+AreaDouble = "\"" ( !( "\"" @Sp ( ")" | @Newline ) ) . )* "\""
 
 AutoLink = AutoLinkUrl | AutoLinkEmail
 
@@ -1001,7 +1001,7 @@ AutoLinkEmail = "<" ("mailto:")? < /[\w+.\/!%~$-]+/i "@" ( !@Newline !">" . )+ >
                 { "mailto:#{text}" }
 
 Reference = @NonindentSpace !"[]"
-              Label:label ":" Spnl RefSrc:link RefTitle @BlankLine+
+              Label:label ":" Spnl RefSrc:link RefArea @BlankLine+
             { # TODO use title
               reference label, link
               nil
@@ -1015,15 +1015,15 @@ Label = "[" ( !"^" &{ notes? } | &. &{ !notes? } )
 
 RefSrc = < Nonspacechar+ > { text }
 
-RefTitle = ( RefTitleSingle | RefTitleDouble | RefTitleParens | EmptyTitle )
+RefArea = ( RefAreaSingle | RefAreaDouble | RefAreaParens | EmptyArea )
 
-EmptyTitle = ""
+EmptyArea = ""
 
-RefTitleSingle = Spnl "'" < ( !( "'" @Sp @Newline | @Newline ) . )* > "'" { text }
+RefAreaSingle = Spnl "'" < ( !( "'" @Sp @Newline | @Newline ) . )* > "'" { text }
 
-RefTitleDouble = Spnl "\"" < ( !("\"" @Sp @Newline | @Newline) . )* > "\"" { text }
+RefAreaDouble = Spnl "\"" < ( !("\"" @Sp @Newline | @Newline) . )* > "\"" { text }
 
-RefTitleParens = Spnl "(" < ( !(")" @Sp @Newline | @Newline) . )* > ")" { text }
+RefAreaParens = Spnl "(" < ( !(")" @Sp @Newline | @Newline) . )* > ")" { text }
 
 References = ( Reference | SkipBlock )*
 

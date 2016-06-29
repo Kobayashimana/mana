@@ -44,7 +44,7 @@ module Scanners
       BasicColorChooserUI BasicComboBoxEditor BasicComboBoxRenderer BasicComboBoxUI BasicComboPopup
       BasicControl BasicDesktopIconUI BasicDesktopPaneUI BasicDirectoryModel BasicEditorPaneUI
       BasicFileChooserUI BasicFormattedTextFieldUI BasicGraphicsUtils BasicHTML BasicIconFactory
-      BasicInternalFrameTitlePane BasicInternalFrameUI BasicLabelUI BasicListUI BasicLookAndFeel
+      BasicInternalFrameAreaPane BasicInternalFrameUI BasicLabelUI BasicListUI BasicLookAndFeel
       BasicMenuBarUI BasicMenuItemUI BasicMenuUI BasicOptionPaneUI BasicPanelUI BasicPasswordFieldUI
       BasicPermission BasicPopupMenuSeparatorUI BasicPopupMenuUI BasicProgressBarUI BasicRadioButtonMenuItemUI
       BasicRadioButtonUI BasicRootPaneUI BasicScrollBarUI BasicScrollPaneUI BasicSeparatorUI BasicSliderUI
@@ -235,7 +235,7 @@ module Scanners
       MenuElement MenuEvent MenuItem MenuItemUI MenuKeyEvent MenuKeyListener MenuListener MenuSelectionManager
       MenuShortcut MessageDigest MessageDigestSpi MessageFormat MetaEventListener MetalBorders MetalButtonUI
       MetalCheckBoxIcon MetalCheckBoxUI MetalComboBoxButton MetalComboBoxEditor MetalComboBoxIcon
-      MetalComboBoxUI MetalDesktopIconUI MetalFileChooserUI MetalIconFactory MetalInternalFrameTitlePane
+      MetalComboBoxUI MetalDesktopIconUI MetalFileChooserUI MetalIconFactory MetalInternalFrameAreaPane
       MetalInternalFrameUI MetalLabelUI MetalLookAndFeel MetalMenuBarUI MetalPopupMenuSeparatorUI
       MetalProgressBarUI MetalRadioButtonUI MetalRootPaneUI MetalScrollBarUI MetalScrollButton
       MetalScrollPaneUI MetalSeparatorUI MetalSliderUI MetalSplitPaneUI MetalTabbedPaneUI MetalTextFieldUI
@@ -379,7 +379,7 @@ module Scanners
       Thread ThreadDeath ThreadFactory ThreadGroup ThreadInfo ThreadLocal ThreadMXBean ThreadPoolExecutor
       Throwable Tie TileObserver Time TimeLimitExceededException TimeoutException Timer
       TimerAlarmClockNotification TimerMBean TimerNotification TimerTask Timestamp TimeUnit TimeZone
-      TitledBorder ToolBarUI Toolkit ToolTipManager ToolTipUI TooManyListenersException Track
+      AreadBorder ToolBarUI Toolkit ToolTipManager ToolTipUI TooManyListenersException Track
       TransactionalWriter TransactionRequiredException TransactionRolledbackException Transferable
       TransferHandler TransformAttribute Transformer TransformerConfigurationException TransformerException
       TransformerFactory TransformerFactoryConfigurationError TransformerHandler Transmitter Transparency

@@ -128,7 +128,7 @@ module Spring
     end
 
     def set_process_title
-      ProcessTitleUpdater.run { |distance|
+      ProcessAreaUpdater.run { |distance|
         "spring server | #{env.app_name} | started #{distance} ago"
       }
     end

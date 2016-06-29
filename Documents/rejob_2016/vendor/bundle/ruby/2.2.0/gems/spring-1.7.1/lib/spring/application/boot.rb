@@ -11,7 +11,7 @@ app = Spring::Application.new(
 
 Signal.trap("TERM") { app.terminate }
 
-Spring::ProcessTitleUpdater.run { |distance|
+Spring::ProcessAreaUpdater.run { |distance|
   "spring app    | #{app.app_name} | started #{distance} ago | #{app.app_env} mode"
 }
 

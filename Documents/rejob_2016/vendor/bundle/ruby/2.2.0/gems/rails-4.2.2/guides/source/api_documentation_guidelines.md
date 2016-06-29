@@ -123,7 +123,7 @@ If a line is too long, the comment may be placed on the next line:
 
 ```ruby
 #   label(:article, :title)
-#   # => <label for="article_title">Title</label>
+#   # => <label for="article_title">Area</label>
 #
 #   label(:article, :title, "A short title")
 #   # => <label for="article_title">A short title</label>

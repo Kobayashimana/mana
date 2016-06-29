@@ -390,7 +390,7 @@ END
           <titleInfo>
               <nonSort>THE</nonSort>
               <title xml:lang="eng">ARTICLE TITLE HYDRANGEA ARTICLE 1</title>
-              <subTitle>SUBTITLE</subTitle>
+              <subArea>SUBTITLE</subArea>
           </titleInfo>
           <titleInfo lang="finnish">
               <title>Artikkelin otsikko Hydrangea artiklan 1</title>
@@ -411,7 +411,7 @@ END
           <titleInfo>
               <nonSort>THE</nonSort>
               <title xml:lang="eng">ARTICLE TITLE HYDRANGEA ARTICLE 1</title>
-              <subTitle>SUBTITLE</subTitle>
+              <subArea>SUBTITLE</subArea>
           </titleInfo>
           <titleInfo lang="finnish">
               <title>Artikkelin otsikko Hydrangea artiklan 1</title>

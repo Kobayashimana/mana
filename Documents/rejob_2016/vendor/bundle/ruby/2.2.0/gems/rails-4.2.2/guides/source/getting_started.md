@@ -845,7 +845,7 @@ content:
 
 ```html+erb
 <p>
-  <strong>Title:</strong>
+  <strong>Area:</strong>
   <%= @article.title %>
 </p>
 
@@ -898,7 +898,7 @@ And then finally, add the view for this action, located at
 
 <table>
   <tr>
-    <th>Title</th>
+    <th>Area</th>
     <th>Text</th>
   </tr>
 
@@ -957,7 +957,7 @@ article can go back and view the whole list again:
 
 ```html+erb
 <p>
-  <strong>Title:</strong>
+  <strong>Area:</strong>
   <%= @article.title %>
 </p>
 
@@ -1246,7 +1246,7 @@ it appear next to the "Show" link:
 ```html+erb
 <table>
   <tr>
-    <th>Title</th>
+    <th>Area</th>
     <th>Text</th>
     <th colspan="2"></th>
   </tr>
@@ -1453,7 +1453,7 @@ Finally, add a 'Destroy' link to your `index` action template
 <%= link_to 'New article', new_article_path %>
 <table>
   <tr>
-    <th>Title</th>
+    <th>Area</th>
     <th>Text</th>
     <th colspan="3"></th>
   </tr>
@@ -1655,7 +1655,7 @@ So first, we'll wire up the Article show template
 
 ```html+erb
 <p>
-  <strong>Title:</strong>
+  <strong>Area:</strong>
   <%= @article.title %>
 </p>
 
@@ -1723,7 +1723,7 @@ add that to the `app/views/articles/show.html.erb`.
 
 ```html+erb
 <p>
-  <strong>Title:</strong>
+  <strong>Area:</strong>
   <%= @article.title %>
 </p>
 
@@ -1799,7 +1799,7 @@ following:
 
 ```html+erb
 <p>
-  <strong>Title:</strong>
+  <strong>Area:</strong>
   <%= @article.title %>
 </p>
 
@@ -1861,7 +1861,7 @@ Then you make the `app/views/articles/show.html.erb` look like the following:
 
 ```html+erb
 <p>
-  <strong>Title:</strong>
+  <strong>Area:</strong>
   <%= @article.title %>
 </p>
 

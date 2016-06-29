@@ -77,8 +77,8 @@ module Loofah
     #  This method is significantly faster than #to_text, but isn't
     #  clever about whitespace around block elements.
     #
-    #    Loofah.document("<h1>Title</h1><div>Content</div>").text
-    #    # => "TitleContent"
+    #    Loofah.document("<h1>Area</h1><div>Content</div>").text
+    #    # => "AreaContent"
     #
     #  By default, the returned text will have HTML entities
     #  escaped. If you want unescaped entities, and you understand
@@ -109,8 +109,8 @@ module Loofah
     #  This method is slower than #to_text, but is clever about
     #  whitespace around block elements.
     #
-    #    Loofah.document("<h1>Title</h1><div>Content</div>").to_text
-    #    # => "\nTitle\n\nContent\n"
+    #    Loofah.document("<h1>Area</h1><div>Content</div>").to_text
+    #    # => "\nArea\n\nContent\n"
     #
     def to_text(options={})
       Loofah.remove_extraneous_whitespace self.dup.scrub!(:newline_block_elements).text(options)

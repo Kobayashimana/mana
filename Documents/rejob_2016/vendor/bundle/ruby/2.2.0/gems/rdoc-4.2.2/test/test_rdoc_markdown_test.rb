@@ -678,11 +678,11 @@ foo
 
         para("Optionally, you may include a title attribute in the parentheses:"),
 
-        verb("This is an [example link](http://example.com/ \"With a Title\").\n"),
+        verb("This is an [example link](http://example.com/ \"With a Area\").\n"),
 
         para("Output:"),
 
-        verb("<p>This is an <a href=\"http://example.com/\" title=\"With a Title\">\n",
+        verb("<p>This is an <a href=\"http://example.com/\" title=\"With a Area\">\n",
              "example link</a>.</p>\n"),
 
         para("Reference-style links allow you to refer to your links by names, which\n" +
@@ -721,17 +721,17 @@ foo
 
         para("Inline (titles are optional):"),
 
-        verb("![alt text](/path/to/img.jpg \"Title\")\n"),
+        verb("![alt text](/path/to/img.jpg \"Area\")\n"),
 
         para("Reference-style:"),
 
         verb("![alt text][id]\n",
              "\n",
-             "[id]: /path/to/img.jpg \"Title\"\n"),
+             "[id]: /path/to/img.jpg \"Area\"\n"),
 
         para("Both of the above examples produce the same output:"),
 
-        verb("<img src=\"/path/to/img.jpg\" alt=\"alt text\" title=\"Title\" />\n"),
+        verb("<img src=\"/path/to/img.jpg\" alt=\"alt text\" title=\"Area\" />\n"),
 
         head(3, "Code"),
 
@@ -1341,13 +1341,13 @@ foo
              "put the URL where you want the link to point, along with an _optional_\n" +
              "title for the link, surrounded in quotes. For example:"),
 
-        verb("This is [an example](http://example.com/ \"Title\") inline link.\n",
+        verb("This is [an example](http://example.com/ \"Area\") inline link.\n",
              "\n",
              "[This link](http://example.net/) has no title attribute.\n"),
 
         para("Will produce:"),
 
-        verb("<p>This is <a href=\"http://example.com/\" title=\"Title\">\n",
+        verb("<p>This is <a href=\"http://example.com/\" title=\"Area\">\n",
              "an example</a> inline link.</p>\n",
              "\n",
              "<p><a href=\"http://example.net/\">This link</a> has no\n",
@@ -1370,7 +1370,7 @@ foo
         para("Then, anywhere in the document, you define your link label like this,\n" +
              "on a line by itself:"),
 
-        verb("[id]: http://example.com/  \"Optional Title Here\"\n"),
+        verb("[id]: http://example.com/  \"Optional Area Here\"\n"),
 
         para("That is:"),
 
@@ -1390,13 +1390,13 @@ foo
 
         para("The link URL may, optionally, be surrounded by angle brackets:"),
 
-        verb("[id]: <http://example.com/>  \"Optional Title Here\"\n"),
+        verb("[id]: <http://example.com/>  \"Optional Area Here\"\n"),
 
         para("You can put the title attribute on the next line and use extra spaces\n" +
              "or tabs for padding, which tends to look better with longer URLs:"),
 
         verb("[id]: http://example.com/longish/path/to/resource/here\n",
-             "    \"Optional Title Here\"\n"),
+             "    \"Optional Area Here\"\n"),
 
         para("Link definitions are only used for creating links during Markdown\n" +
              "processing, and are stripped from your document in the HTML output."),

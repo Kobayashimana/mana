@@ -28,7 +28,7 @@ The `debug` helper will return a \<pre> tag that renders the object using the YA
 ```html+erb
 <%= debug @article %>
 <p>
-  <b>Title:</b>
+  <b>Area:</b>
   <%= @article.title %>
 </p>
 ```
@@ -47,7 +47,7 @@ attributes:
 attributes_cache: {}
 
 
-Title: Rails debugging guide
+Area: Rails debugging guide
 ```
 
 ### `to_yaml`
@@ -57,7 +57,7 @@ Displaying an instance variable, or any other object or method, in YAML format c
 ```html+erb
 <%= simple_format @article.to_yaml %>
 <p>
-  <b>Title:</b>
+  <b>Area:</b>
   <%= @article.title %>
 </p>
 ```
@@ -77,7 +77,7 @@ id: "1"
 created_at: 2008-09-05 22:55:47
 attributes_cache: {}
 
-Title: Rails debugging guide
+Area: Rails debugging guide
 ```
 
 ### `inspect`
@@ -87,7 +87,7 @@ Another useful method for displaying object values is `inspect`, especially when
 ```html+erb
 <%= [1, 2, 3, 4, 5].inspect %>
 <p>
-  <b>Title:</b>
+  <b>Area:</b>
   <%= @article.title %>
 </p>
 ```
@@ -97,7 +97,7 @@ Will be rendered as follows:
 ```
 [1, 2, 3, 4, 5]
 
-Title: Rails debugging guide
+Area: Rails debugging guide
 ```
 
 The Logger

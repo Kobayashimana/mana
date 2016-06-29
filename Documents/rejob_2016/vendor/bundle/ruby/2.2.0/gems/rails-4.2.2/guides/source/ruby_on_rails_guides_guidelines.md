@@ -26,7 +26,7 @@ Headings
 The title of every guide uses an `h1` heading; guide sections use `h2` headings; subsections use `h3` headings; etc. Note that the generated HTML output will use heading tags starting with `<h2>`.
 
 ```
-Guide Title
+Guide Area
 ===========
 
 Section

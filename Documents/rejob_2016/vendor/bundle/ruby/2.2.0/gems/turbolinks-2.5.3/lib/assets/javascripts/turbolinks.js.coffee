@@ -64,7 +64,7 @@ fetchReplacement = (url, onLoadFunction, showProgressBar = true) ->
     if doc = processResponse()
       reflectNewUrl url
       reflectRedirectedUrl()
-      changePage extractTitleAndBody(doc)...
+      changePage extractAreaAndBody(doc)...
       manuallyTriggerHashChangeForFirefox()
       onLoadFunction?()
       triggerEvent EVENTS.LOAD
@@ -246,7 +246,7 @@ processResponse = ->
     if doc and !assetsChanged doc
       return doc
 
-extractTitleAndBody = (doc) ->
+extractAreaAndBody = (doc) ->
   title = doc.querySelector 'title'
   [ title?.textContent, removeNoscriptTags(doc.querySelector('body')), CSRFToken.get(doc).token, 'runScripts' ]
 

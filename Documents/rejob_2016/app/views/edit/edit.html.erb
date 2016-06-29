@@ -1,0 +1,28 @@
+  <link href="/stylesheets/inside/stories.css" media="all" rel="stylesheet">
+  <h2 class="heading1-pt1">
+       管理画面＿求人編集ページ</h2>
+
+
+
+   <%= form_for @job , url: {controller: "edit", action: "update"} do |f| %>
+
+     <p>
+       <%= f.label :"タイトル" %><br>
+       <%= f.text_field :title, :size =>"100" %>
+     </p>
+     <p>
+       <%= f.label :"詳細"%><br>
+       <%= f.text_area :detail , :size =>"100x10" %>
+     </p>
+     <p>
+       <%= f.submit "編集" %>
+       <a class="btn btn-xs btn-warning" name="edit" href="/admin_destroy/<%= params[:id] %>">destroy</a>
+     </p>
+
+
+
+   <% end %>
+
+
+　　　　
+　　　　　<%= link_to '戻っちゃうよ',admin_top_do_path %>

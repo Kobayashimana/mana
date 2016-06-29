@@ -1,0 +1,44 @@
+<head>
+<style type="text/css">
+
+h1 {
+margin: 0px 20px;
+padding: 0;
+}
+
+section,p {
+margin: 0px 60px;
+padding: 0;
+}
+
+form {
+margin: 0px 60px;
+padding: 0;
+}
+
+</style>
+</head>
+
+
+
+<div style="font-size:22px">検索ぺージ</div>
+  <p>都道府県を選択してください</p>
+
+  <form action="/jobs" method="get">
+     <select name="[:job][:area_id]" >
+       <% Area.all.each do |title| %>
+         <option value="<%= title.id %>"><%= title.area %><br></option>
+       <% end %>
+     </select>
+     <button type="search" >検索</button>
+   </form>
+ </div>
+
+<p><%= link_to '案件詳細',jobs_job_detail_path %></p>
+ <br>
+
+<% @jobs.each do |job| %>
+   <p><a href="/job/<%= job.id %>"><%= job.title %></a></p>
+<% end %>
+
+<p>Find me in app/views/jobs/joblist.html.erb</p>

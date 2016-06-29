@@ -1,2 +1,0 @@
-class LoginTopController < ApplicationController
-end

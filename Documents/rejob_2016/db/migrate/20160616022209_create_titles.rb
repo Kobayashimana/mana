@@ -1,4 +1,4 @@
-class CreateTitles < ActiveRecord::Migration
+class CreateAreas < ActiveRecord::Migration
   def change
     create_table :titles do |t|
       t.string :area

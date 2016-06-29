@@ -293,7 +293,7 @@ Action Pack
     ```ruby
     @items.each do |item|
       content_tag_for(:li, item) do
-         Title: <%= item.title %>
+         Area: <%= item.title %>
       end
     end
     ```
@@ -302,7 +302,7 @@ Action Pack
 
     ```ruby
     content_tag_for(:li, @items) do |item|
-      Title: <%= item.title %>
+      Area: <%= item.title %>
     end
     ```
 

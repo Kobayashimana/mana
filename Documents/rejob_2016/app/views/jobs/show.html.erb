@@ -1,0 +1,9 @@
+<h2 class="heading1-pt1">案件詳細</h2>
+
+<p>title: <%= @job.title %> </p>
+<p>都道府県： <%= @job.area_id %> </p>
+
+<a href="/entry?id=<%= @job.id %>">
+  <br><br>
+  <button type="new" class="btn btn--pt3 btn--entry01 btn--kantan w-block">応募する</button>
+</a><br><br>

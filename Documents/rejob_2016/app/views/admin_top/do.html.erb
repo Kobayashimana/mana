@@ -2,35 +2,56 @@
 
 <p>Find me in app/views/admin_top/do.html.erb</p>
 
-<h1 class="page-header">求人一覧</h1>
+
+<h2 class="heading1-pt1">
+  求人一覧
+  </h2>
 
 
-          <table class="table table-bordered table-hover table-striped">
+ <br>
+
+   <a href="/admin_new">
+     <button type="new">新規作成</button>
+   </a><br><br>
+
+
+          <table border="1" class="table table-bordered table-hover table-striped" text-align="center">
           <thead><tr>
-            <th>求人ID</th>
-            <th>エリア</th>
-            <th>タイトル</th>
-            <th>説明文</th>
-            <th>作成時刻</th>
-            <th>応募数</th>
-            <th class="text-center">編集</th></tr>
+            <th style="width:5%">求人ID</th>
+            <th style="width:5%">エリア</th>
+            <th style="width:20%">タイトル</th>
+            <th style="width:40%">説明文</th>
+            <th style="width:15%">作成時刻</th>
+            <th style="width:7%">応募数</th>
+            <th style="width:7%" class="text-center">編集</th></tr>
           </thead>
 
 
-<% @jobs.each do |job| %>
-<p><%= job.title %></p>
-<% end %>
 
+          <% Job.all.each do |job| %>
+           <% Job.order("job_id") %>
+           <tr class="link">
+               <td><%= job.id %></a></td>
+               <td><%= Area.find(job.area_id).area %></a></td>
+               <td><a href="/job/<%= job.id %>"><%= job.title %></a></td>
+               <td><%= job.detail%></td>
+               <td><%= job.created_at%></td>
+               <td><%= UserJob.where(job_id: job.id).count %></td>
+               <form method="get" action="http://localhost:3000/login/edit">
+                 <td class="text-center">
+                 <div class="button-margin" style="margin:0 auto" align="center">
+                  <a class="btn btn-xs btn-warning" name="edit" href="/edit/<%= job.id %>/edit">Edit</a>
+                </div>
+                 </td>
+            </tr>
+          </tbody>
 
-<%= link_to '戻っちゃうよ',top_top_page_path %>
-<div>
- <input type="button" value="前のページへ戻る" onclick="history.back()">
- <%= button_to '戻る',top_top_page_path %>
-<div>
-</div>
+   <% end %>
+
 <ul>
 
+<%= link_to '戻っちゃうよ',top_top_page_path %>
 
-
+</div>
 
 </ul>

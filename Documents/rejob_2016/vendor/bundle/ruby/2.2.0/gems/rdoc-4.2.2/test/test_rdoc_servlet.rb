@@ -263,7 +263,7 @@ class TestRDocServlet < RDoc::TestCase
   def test_generator_for
     store = RDoc::Store.new
     store.main  = 'MAIN_PAGE.rdoc'
-    store.title = 'Title'
+    store.title = 'Area'
 
     generator = @s.generator_for store
 
@@ -272,7 +272,7 @@ class TestRDocServlet < RDoc::TestCase
     assert_equal '..', generator.asset_rel_path
 
     assert_equal 'MAIN_PAGE.rdoc', @s.options.main_page
-    assert_equal 'Title',          @s.options.title
+    assert_equal 'Area',          @s.options.title
 
     assert_kind_of RDoc::RDoc, store.rdoc
     assert_same generator, store.rdoc.generator

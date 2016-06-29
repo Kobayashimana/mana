@@ -1,0 +1,28 @@
+<div style="width:50%; margin:0 auto;" align="center">
+<br>
+<h1>Login</h1>
+<br>
+<br>
+<form method=get action="/login_check">
+  <%#<input name="authenticity_token" type="hidden" value="1234" />%>
+  <div align="left" style="width:30%;">
+    ■ユーザーID <input type="text" name="user_id">
+    <br>
+    ■パスワード <input type="password" name="password">
+    <br>
+    <br>
+  </div>
+  <input type="submit" value="ログイン">
+</form>
+<br>
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
+<hr>
+<br>
+初めての方はこちら ▶︎
+  <button action=sighnup type="button" class="btn btn--pt1 btn--large w-block txt_size_16" align="center" onclick="location.href='sighnup'">無料会員登録> </button>
+
+
+</a><br><br><br>
+</div>

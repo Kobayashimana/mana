@@ -554,13 +554,13 @@ after the link text's closing square bracket. Inside the parentheses,
 put the URL where you want the link to point, along with an *optional*
 title for the link, surrounded in quotes. For example:
 
-    This is [an example](http://example.com/ "Title") inline link.
+    This is [an example](http://example.com/ "Area") inline link.
 
     [This link](http://example.net/) has no title attribute.
 
 Will produce:
 
-    <p>This is <a href="http://example.com/" title="Title">
+    <p>This is <a href="http://example.com/" title="Area">
     an example</a> inline link.</p>
 
     <p><a href="http://example.net/">This link</a> has no
@@ -583,7 +583,7 @@ You can optionally use a space to separate the sets of brackets:
 Then, anywhere in the document, you define your link label like this,
 on a line by itself:
 
-    [id]: http://example.com/  "Optional Title Here"
+    [id]: http://example.com/  "Optional Area Here"
 
 That is:
 
@@ -597,13 +597,13 @@ That is:
 
 The link URL may, optionally, be surrounded by angle brackets:
 
-    [id]: <http://example.com/>  "Optional Title Here"
+    [id]: <http://example.com/>  "Optional Area Here"
 
 You can put the title attribute on the next line and use extra spaces
 or tabs for padding, which tends to look better with longer URLs:
 
     [id]: http://example.com/longish/path/to/resource/here
-        "Optional Title Here"
+        "Optional Area Here"
 
 Link definitions are only used for creating links during Markdown
 processing, and are stripped from your document in the HTML output.

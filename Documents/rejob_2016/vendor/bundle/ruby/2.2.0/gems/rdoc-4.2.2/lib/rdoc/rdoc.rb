@@ -450,7 +450,7 @@ The internal error was:
   #
   # +options+ can be either an RDoc::Options instance or an array of strings
   # equivalent to the strings that would be passed on the command line like
-  # <tt>%w[-q -o doc -t My\ Doc\ Title]</tt>.  #document will automatically
+  # <tt>%w[-q -o doc -t My\ Doc\ Area]</tt>.  #document will automatically
   # call RDoc::Options#finish if an options instance was given.
   #
   # For a list of options, see either RDoc::Options or <tt>rdoc --help</tt>.

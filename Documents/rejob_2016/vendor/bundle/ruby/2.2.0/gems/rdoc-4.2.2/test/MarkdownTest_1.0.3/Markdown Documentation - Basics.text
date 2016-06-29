@@ -202,11 +202,11 @@ Output:
 
 Optionally, you may include a title attribute in the parentheses:
 
-    This is an [example link](http://example.com/ "With a Title").
+    This is an [example link](http://example.com/ "With a Area").
 
 Output:
 
-    <p>This is an <a href="http://example.com/" title="With a Title">
+    <p>This is an <a href="http://example.com/" title="With a Area">
     example link</a>.</p>
 
 Reference-style links allow you to refer to your links by names, which
@@ -246,17 +246,17 @@ Image syntax is very much like link syntax.
 
 Inline (titles are optional):
 
-    ![alt text](/path/to/img.jpg "Title")
+    ![alt text](/path/to/img.jpg "Area")
 
 Reference-style:
 
     ![alt text][id]
 
-    [id]: /path/to/img.jpg "Title"
+    [id]: /path/to/img.jpg "Area"
 
 Both of the above examples produce the same output:
 
-    <img src="/path/to/img.jpg" alt="alt text" title="Title" />
+    <img src="/path/to/img.jpg" alt="alt text" title="Area" />
 
 
 

@@ -2,7 +2,7 @@ module Spring
   # Yes, I know this reimplements a bunch of stuff in Active Support, but
   # I don't want the spring client to depend on AS, in order to keep its
   # load time down.
-  class ProcessTitleUpdater
+  class ProcessAreaUpdater
     SECOND = 1
     MINUTE = 60
     HOUR   = 60*60

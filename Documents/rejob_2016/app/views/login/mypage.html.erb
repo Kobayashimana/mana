@@ -1,0 +1,38 @@
+
+<div style="font-size:22px">マイページ</div>
+＜応募履歴＞<br>あなたの応募数は現在 <%= @entry.count %>件です！！ <br>
+
+<% @job.each do |job| %>
+<dl class="list-dl-pt3 list-dl-pt3--dt9em txt_size_12">
+  <h4><a href="/job?id=<%= job.try(:id) %>"><%= job.try(:title) %></a></h4>
+  <dt>詳細</dt>
+    <dd>
+      <ul class="ul-inline ul-inline--cut">
+        <li>
+            <%= job.try(:description) %>
+        </li>
+      </ul>
+    </dd>
+  <dt>エリア</dt>
+    <dd>
+      <ul class="ul-inline ul-inline--cut">
+        <li>
+            <a href="/search?area=<%= job.try(:area) %>"><%= job.try(:area) %></a>
+        </li>
+    </ul>
+  </dd>
+</dl>
+  <br>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+<p>Find me in app/views/login/mypage.html.erb</p>

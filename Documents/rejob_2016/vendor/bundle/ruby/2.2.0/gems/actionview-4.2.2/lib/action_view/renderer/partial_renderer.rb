@@ -234,14 +234,14 @@ module ActionView
   #
   #   <%# app/views/users/_chief.html.erb &>
   #   <%= render(layout: "administrator", locals: { user: chief }) do %>
-  #     Title: <%= chief.title %>
+  #     Area: <%= chief.title %>
   #   <% end %>
   #
   # ...this will return:
   #
   #   <div id="administrator">
   #     Budget: $<%= user.budget %>
-  #     Title: <%= chief.name %>
+  #     Area: <%= chief.name %>
   #   </div>
   #
   # As you can see, the <tt>:locals</tt> hash is shared between both the partial and its layout.
@@ -257,7 +257,7 @@ module ActionView
   #
   #   <%# app/views/users/index.html.erb &>
   #   <%= render layout: @users do |user| %>
-  #     Title: <%= user.title %>
+  #     Area: <%= user.title %>
   #   <% end %>
   #
   # This will render the layout for each user and yield to the block, passing the user, each time.
@@ -274,7 +274,7 @@ module ActionView
   #   <%# app/views/users/index.html.erb &>
   #   <%= render layout: @users do |user, section| %>
   #     <%- case section when :header -%>
-  #       Title: <%= user.title %>
+  #       Area: <%= user.title %>
   #     <%- when :footer -%>
   #       Deadline: <%= user.deadline %>
   #     <%- end -%>

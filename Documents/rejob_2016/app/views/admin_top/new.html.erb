@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "inside/stories", :media => "all" %>
+<h2 class="heading1-pt1">
+  管理画面＿新規作成ページ</h2>
+
+  <%= form_for @job, :url => {:action => 'create'} do |f| %>
+  <div class="field">
+   <%= f.label :title, "タイトル" %>
+   <%= f.text_field :title %>
+ </div>
+
+ <div class="field">
+   <%= f.label :detail, "詳細" %>
+   <%= f.text_field :detail %>
+ </div>
+
+<div class="field">
+  <%= f.label :area_id, "エリア" %>
+  <%= f.collection_select :area_id, Area.all, :id, :area, :include_blank => true %>
+</div>
+
+
+ <div class="actions">
+   <%= f.submit "送信する" %>
+ </div>
+<% end %>

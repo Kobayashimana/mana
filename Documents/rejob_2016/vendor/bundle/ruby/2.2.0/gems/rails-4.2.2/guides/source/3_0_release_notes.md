@@ -381,10 +381,10 @@ NOTE: All the Rails version 2.3 style validation methods are still supported in 
 You can also pass in a validator object, which you can then reuse between objects that use Active Model:
 
 ```ruby
-class TitleValidator < ActiveModel::EachValidator
-  Titles = ['Mr.', 'Mrs.', 'Dr.']
+class AreaValidator < ActiveModel::EachValidator
+  Areas = ['Mr.', 'Mrs.', 'Dr.']
   def validate_each(record, attribute, value)
-    unless Titles.include?(value)
+    unless Areas.include?(value)
       record.errors[attribute] << 'must be a valid title'
     end
   end

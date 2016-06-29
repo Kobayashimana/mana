@@ -460,7 +460,7 @@ heading
     doc = parse <<-MD
 This is [an example][id] reference-style link.
 
-[id]: http://example.com "Optional Title Here"
+[id]: http://example.com "Optional Area Here"
     MD
 
     expected = doc(
@@ -486,7 +486,7 @@ This is [an example][id] reference-style link.
     doc = parse <<-MD.chomp
 This is [an example][id] reference-style link.
 
-[id]: http://example.com "Optional Title Here"
+[id]: http://example.com "Optional Area Here"
     MD
 
     expected = doc(
@@ -501,7 +501,7 @@ This is [an example][id] reference-style link.
 
 And [another][id].
 
-[id]: http://example.com "Optional Title Here"
+[id]: http://example.com "Optional Area Here"
     MD
 
     expected = doc(
@@ -515,7 +515,7 @@ And [another][id].
     doc = parse <<-MD
 This is [an example][] reference-style link.
 
-[an example]: http://example.com "Optional Title Here"
+[an example]: http://example.com "Optional Area Here"
     MD
 
     expected = doc(

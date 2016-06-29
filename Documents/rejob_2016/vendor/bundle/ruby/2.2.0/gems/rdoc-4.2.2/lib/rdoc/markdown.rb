@@ -10862,7 +10862,7 @@ class RDoc::Markdown
     return _tmp
   end
 
-  # ExplicitLink = Label:l Spnl "(" @Sp Source:s Spnl Title @Sp ")" { "{#{l}}[#{s}]" }
+  # ExplicitLink = Label:l Spnl "(" @Sp Source:s Spnl Area @Sp ")" { "{#{l}}[#{s}]" }
   def _ExplicitLink
 
     _save = self.pos
@@ -10899,7 +10899,7 @@ class RDoc::Markdown
         self.pos = _save
         break
       end
-      _tmp = apply(:_Title)
+      _tmp = apply(:_Area)
       unless _tmp
         self.pos = _save
         break
@@ -11114,18 +11114,18 @@ class RDoc::Markdown
     return _tmp
   end
 
-  # Title = (TitleSingle | TitleDouble | ""):a { a }
-  def _Title
+  # Area = (AreaSingle | AreaDouble | ""):a { a }
+  def _Area
 
     _save = self.pos
     while true # sequence
 
       _save1 = self.pos
       while true # choice
-        _tmp = apply(:_TitleSingle)
+        _tmp = apply(:_AreaSingle)
         break if _tmp
         self.pos = _save1
-        _tmp = apply(:_TitleDouble)
+        _tmp = apply(:_AreaDouble)
         break if _tmp
         self.pos = _save1
         _tmp = match_string("")
@@ -11147,12 +11147,12 @@ class RDoc::Markdown
       break
     end # end sequence
 
-    set_failed_rule :_Title unless _tmp
+    set_failed_rule :_Area unless _tmp
     return _tmp
   end
 
-  # TitleSingle = "'" (!("'" @Sp (")" | @Newline)) .)* "'"
-  def _TitleSingle
+  # AreaSingle = "'" (!("'" @Sp (")" | @Newline)) .)* "'"
+  def _AreaSingle
 
     _save = self.pos
     while true # sequence
@@ -11224,12 +11224,12 @@ class RDoc::Markdown
       break
     end # end sequence
 
-    set_failed_rule :_TitleSingle unless _tmp
+    set_failed_rule :_AreaSingle unless _tmp
     return _tmp
   end
 
-  # TitleDouble = "\"" (!("\"" @Sp (")" | @Newline)) .)* "\""
-  def _TitleDouble
+  # AreaDouble = "\"" (!("\"" @Sp (")" | @Newline)) .)* "\""
+  def _AreaDouble
 
     _save = self.pos
     while true # sequence
@@ -11301,7 +11301,7 @@ class RDoc::Markdown
       break
     end # end sequence
 
-    set_failed_rule :_TitleDouble unless _tmp
+    set_failed_rule :_AreaDouble unless _tmp
     return _tmp
   end
 
@@ -11563,7 +11563,7 @@ class RDoc::Markdown
     return _tmp
   end
 
-  # Reference = @NonindentSpace !"[]" Label:label ":" Spnl RefSrc:link RefTitle @BlankLine+ { # TODO use title               reference label, link               nil             }
+  # Reference = @NonindentSpace !"[]" Label:label ":" Spnl RefSrc:link RefArea @BlankLine+ { # TODO use title               reference label, link               nil             }
   def _Reference
 
     _save = self.pos
@@ -11603,7 +11603,7 @@ class RDoc::Markdown
         self.pos = _save
         break
       end
-      _tmp = apply(:_RefTitle)
+      _tmp = apply(:_RefArea)
       unless _tmp
         self.pos = _save
         break
@@ -11793,39 +11793,39 @@ class RDoc::Markdown
     return _tmp
   end
 
-  # RefTitle = (RefTitleSingle | RefTitleDouble | RefTitleParens | EmptyTitle)
-  def _RefTitle
+  # RefArea = (RefAreaSingle | RefAreaDouble | RefAreaParens | EmptyArea)
+  def _RefArea
 
     _save = self.pos
     while true # choice
-      _tmp = apply(:_RefTitleSingle)
+      _tmp = apply(:_RefAreaSingle)
       break if _tmp
       self.pos = _save
-      _tmp = apply(:_RefTitleDouble)
+      _tmp = apply(:_RefAreaDouble)
       break if _tmp
       self.pos = _save
-      _tmp = apply(:_RefTitleParens)
+      _tmp = apply(:_RefAreaParens)
       break if _tmp
       self.pos = _save
-      _tmp = apply(:_EmptyTitle)
+      _tmp = apply(:_EmptyArea)
       break if _tmp
       self.pos = _save
       break
     end # end choice
 
-    set_failed_rule :_RefTitle unless _tmp
+    set_failed_rule :_RefArea unless _tmp
     return _tmp
   end
 
-  # EmptyTitle = ""
-  def _EmptyTitle
+  # EmptyArea = ""
+  def _EmptyArea
     _tmp = match_string("")
-    set_failed_rule :_EmptyTitle unless _tmp
+    set_failed_rule :_EmptyArea unless _tmp
     return _tmp
   end
 
-  # RefTitleSingle = Spnl "'" < (!("'" @Sp @Newline | @Newline) .)* > "'" { text }
-  def _RefTitleSingle
+  # RefAreaSingle = Spnl "'" < (!("'" @Sp @Newline | @Newline) .)* > "'" { text }
+  def _RefAreaSingle
 
     _save = self.pos
     while true # sequence
@@ -11912,12 +11912,12 @@ class RDoc::Markdown
       break
     end # end sequence
 
-    set_failed_rule :_RefTitleSingle unless _tmp
+    set_failed_rule :_RefAreaSingle unless _tmp
     return _tmp
   end
 
-  # RefTitleDouble = Spnl "\"" < (!("\"" @Sp @Newline | @Newline) .)* > "\"" { text }
-  def _RefTitleDouble
+  # RefAreaDouble = Spnl "\"" < (!("\"" @Sp @Newline | @Newline) .)* > "\"" { text }
+  def _RefAreaDouble
 
     _save = self.pos
     while true # sequence
@@ -12004,12 +12004,12 @@ class RDoc::Markdown
       break
     end # end sequence
 
-    set_failed_rule :_RefTitleDouble unless _tmp
+    set_failed_rule :_RefAreaDouble unless _tmp
     return _tmp
   end
 
-  # RefTitleParens = Spnl "(" < (!(")" @Sp @Newline | @Newline) .)* > ")" { text }
-  def _RefTitleParens
+  # RefAreaParens = Spnl "(" < (!(")" @Sp @Newline | @Newline) .)* > ")" { text }
+  def _RefAreaParens
 
     _save = self.pos
     while true # sequence
@@ -12096,7 +12096,7 @@ class RDoc::Markdown
       break
     end # end sequence
 
-    set_failed_rule :_RefTitleParens unless _tmp
+    set_failed_rule :_RefAreaParens unless _tmp
     return _tmp
   end
 
@@ -16063,23 +16063,23 @@ class RDoc::Markdown
   Rules[:_ReferenceLink] = rule_info("ReferenceLink", "(ReferenceLinkDouble | ReferenceLinkSingle)")
   Rules[:_ReferenceLinkDouble] = rule_info("ReferenceLinkDouble", "Label:content < Spnl > !\"[]\" Label:label { link_to content, label, text }")
   Rules[:_ReferenceLinkSingle] = rule_info("ReferenceLinkSingle", "Label:content < (Spnl \"[]\")? > { link_to content, content, text }")
-  Rules[:_ExplicitLink] = rule_info("ExplicitLink", "Label:l Spnl \"(\" @Sp Source:s Spnl Title @Sp \")\" { \"{\#{l}}[\#{s}]\" }")
+  Rules[:_ExplicitLink] = rule_info("ExplicitLink", "Label:l Spnl \"(\" @Sp Source:s Spnl Area @Sp \")\" { \"{\#{l}}[\#{s}]\" }")
   Rules[:_Source] = rule_info("Source", "(\"<\" < SourceContents > \">\" | < SourceContents >) { text }")
   Rules[:_SourceContents] = rule_info("SourceContents", "(((!\"(\" !\")\" !\">\" Nonspacechar)+ | \"(\" SourceContents \")\")* | \"\")")
-  Rules[:_Title] = rule_info("Title", "(TitleSingle | TitleDouble | \"\"):a { a }")
-  Rules[:_TitleSingle] = rule_info("TitleSingle", "\"'\" (!(\"'\" @Sp (\")\" | @Newline)) .)* \"'\"")
-  Rules[:_TitleDouble] = rule_info("TitleDouble", "\"\\\"\" (!(\"\\\"\" @Sp (\")\" | @Newline)) .)* \"\\\"\"")
+  Rules[:_Area] = rule_info("Area", "(AreaSingle | AreaDouble | \"\"):a { a }")
+  Rules[:_AreaSingle] = rule_info("AreaSingle", "\"'\" (!(\"'\" @Sp (\")\" | @Newline)) .)* \"'\"")
+  Rules[:_AreaDouble] = rule_info("AreaDouble", "\"\\\"\" (!(\"\\\"\" @Sp (\")\" | @Newline)) .)* \"\\\"\"")
   Rules[:_AutoLink] = rule_info("AutoLink", "(AutoLinkUrl | AutoLinkEmail)")
   Rules[:_AutoLinkUrl] = rule_info("AutoLinkUrl", "\"<\" < /[A-Za-z]+/ \"://\" (!@Newline !\">\" .)+ > \">\" { text }")
   Rules[:_AutoLinkEmail] = rule_info("AutoLinkEmail", "\"<\" \"mailto:\"? < /[\\w+.\\/!%~$-]+/i \"@\" (!@Newline !\">\" .)+ > \">\" { \"mailto:\#{text}\" }")
-  Rules[:_Reference] = rule_info("Reference", "@NonindentSpace !\"[]\" Label:label \":\" Spnl RefSrc:link RefTitle @BlankLine+ { \# TODO use title               reference label, link               nil             }")
+  Rules[:_Reference] = rule_info("Reference", "@NonindentSpace !\"[]\" Label:label \":\" Spnl RefSrc:link RefArea @BlankLine+ { \# TODO use title               reference label, link               nil             }")
   Rules[:_Label] = rule_info("Label", "\"[\" (!\"^\" &{ notes? } | &. &{ !notes? }) @StartList:a (!\"]\" Inline:l { a << l })* \"]\" { a.join.gsub(/\\s+/, ' ') }")
   Rules[:_RefSrc] = rule_info("RefSrc", "< Nonspacechar+ > { text }")
-  Rules[:_RefTitle] = rule_info("RefTitle", "(RefTitleSingle | RefTitleDouble | RefTitleParens | EmptyTitle)")
-  Rules[:_EmptyTitle] = rule_info("EmptyTitle", "\"\"")
-  Rules[:_RefTitleSingle] = rule_info("RefTitleSingle", "Spnl \"'\" < (!(\"'\" @Sp @Newline | @Newline) .)* > \"'\" { text }")
-  Rules[:_RefTitleDouble] = rule_info("RefTitleDouble", "Spnl \"\\\"\" < (!(\"\\\"\" @Sp @Newline | @Newline) .)* > \"\\\"\" { text }")
-  Rules[:_RefTitleParens] = rule_info("RefTitleParens", "Spnl \"(\" < (!(\")\" @Sp @Newline | @Newline) .)* > \")\" { text }")
+  Rules[:_RefArea] = rule_info("RefArea", "(RefAreaSingle | RefAreaDouble | RefAreaParens | EmptyArea)")
+  Rules[:_EmptyArea] = rule_info("EmptyArea", "\"\"")
+  Rules[:_RefAreaSingle] = rule_info("RefAreaSingle", "Spnl \"'\" < (!(\"'\" @Sp @Newline | @Newline) .)* > \"'\" { text }")
+  Rules[:_RefAreaDouble] = rule_info("RefAreaDouble", "Spnl \"\\\"\" < (!(\"\\\"\" @Sp @Newline | @Newline) .)* > \"\\\"\" { text }")
+  Rules[:_RefAreaParens] = rule_info("RefAreaParens", "Spnl \"(\" < (!(\")\" @Sp @Newline | @Newline) .)* > \")\" { text }")
   Rules[:_References] = rule_info("References", "(Reference | SkipBlock)*")
   Rules[:_Ticks1] = rule_info("Ticks1", "\"`\" !\"`\"")
   Rules[:_Ticks2] = rule_info("Ticks2", "\"``\" !\"`\"")

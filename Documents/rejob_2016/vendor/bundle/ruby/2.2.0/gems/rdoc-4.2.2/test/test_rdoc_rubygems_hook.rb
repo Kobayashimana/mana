@@ -11,7 +11,7 @@ class TestRDocRubygemsHook < Gem::TestCase
       Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.9')
 
     @a = util_spec 'a', 2 do |s|
-      s.rdoc_options = %w[--main MyTitle]
+      s.rdoc_options = %w[--main MyArea]
       s.extra_rdoc_files = %w[README]
     end
 
@@ -83,7 +83,7 @@ class TestRDocRubygemsHook < Gem::TestCase
     assert_equal Pathname(@a.full_gem_path), rdoc.options.root
     assert_equal %w[README lib], rdoc.options.files.sort
 
-    assert_equal 'MyTitle', rdoc.store.main
+    assert_equal 'MyArea', rdoc.store.main
   end
 
   def test_generate_all
@@ -104,7 +104,7 @@ class TestRDocRubygemsHook < Gem::TestCase
     assert_equal Pathname(@a.full_gem_path), rdoc.options.root
     assert_equal %w[README lib], rdoc.options.files.sort
 
-    assert_equal 'MyTitle', rdoc.store.main
+    assert_equal 'MyArea', rdoc.store.main
   end
 
   def test_generate_configuration_rdoc_array

@@ -547,7 +547,7 @@ Of course... Mail will round trip an attachment as well
 
   html_part do
     content_type 'text/html; charset=UTF-8'
-    body '<h1>Funky Title</h1><p>Here is the attachment you wanted</p>'
+    body '<h1>Funky Area</h1><p>Here is the attachment you wanted</p>'
   end
 
   add_file '/path/to/myfile.pdf'

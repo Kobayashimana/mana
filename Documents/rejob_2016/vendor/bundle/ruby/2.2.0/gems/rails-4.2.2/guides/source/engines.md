@@ -847,7 +847,7 @@ an author - represented by a record in the `users` table - with an article,
 represented by the `blorgh_articles` table from the engine.
 
 Finally, the author's name should be displayed on the article's page. Add this code
-above the "Title" output inside `app/views/blorgh/articles/show.html.erb`:
+above the "Area" output inside `app/views/blorgh/articles/show.html.erb`:
 
 ```html+erb
 <p>

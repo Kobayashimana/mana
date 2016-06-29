@@ -44,7 +44,7 @@ module ActiveModel
       #   class Film
       #     include ActiveModel::Validations
       #
-      #     class TitleValidator < ActiveModel::EachValidator
+      #     class AreaValidator < ActiveModel::EachValidator
       #       def validate_each(record, attribute, value)
       #         record.errors.add attribute, "must start with 'the'" unless value =~ /\Athe/i
       #       end

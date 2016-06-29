@@ -163,10 +163,10 @@ class TestRDocTask < RDoc::TestCase
 
   def test_title_option
     rdoc_task = RDoc::Task.new do |rd|
-      rd.title = "Test Title Option"
+      rd.title = "Test Area Option"
     end
 
-    assert_equal %w[-o html] << "--title" << "Test Title Option", rdoc_task.option_list
+    assert_equal %w[-o html] << "--title" << "Test Area Option", rdoc_task.option_list
   end
 
 end if defined?(Rake::Task)

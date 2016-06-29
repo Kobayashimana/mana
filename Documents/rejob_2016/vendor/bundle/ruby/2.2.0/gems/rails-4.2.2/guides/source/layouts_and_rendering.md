@@ -70,7 +70,7 @@ If we want to display the properties of all the books in our view, we can do so 
 
 <table>
   <tr>
-    <th>Title</th>
+    <th>Area</th>
     <th>Summary</th>
     <th></th>
     <th></th>
@@ -1194,7 +1194,7 @@ Suppose you have the following `ApplicationController` layout:
     ```html+erb
     <html>
     <head>
-      <title><%= @page_title or "Page Title" %></title>
+      <title><%= @page_title or "Page Area" %></title>
       <%= stylesheet_link_tag "layout" %>
       <style><%= yield :stylesheets %></style>
     </head>

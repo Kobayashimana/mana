@@ -66,7 +66,7 @@ module ActiveModel
   # The easiest way to add custom validators for validating individual attributes
   # is with the convenient <tt>ActiveModel::EachValidator</tt>.
   #
-  #   class TitleValidator < ActiveModel::EachValidator
+  #   class AreaValidator < ActiveModel::EachValidator
   #     def validate_each(record, attribute, value)
   #       record.errors.add attribute, 'must be Mr., Mrs., or Dr.' unless %w(Mr. Mrs. Dr.).include?(value)
   #     end

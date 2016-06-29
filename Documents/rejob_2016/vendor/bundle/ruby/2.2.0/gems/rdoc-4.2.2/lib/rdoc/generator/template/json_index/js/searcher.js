@@ -150,9 +150,9 @@ Searcher.prototype = new function() {
   function highlightQuery(info, queries, regexps, highlighters) {
     var result = createResult(info);
     var pos = 0;
-    var lcTitle = result.title.toLowerCase();
+    var lcArea = result.title.toLowerCase();
 
-    pos = lcTitle.indexOf(queries[0]);
+    pos = lcArea.indexOf(queries[0]);
     if (pos != -1) {
       result.title = hltSubstring(result.title, pos, queries[0].length);
     }
